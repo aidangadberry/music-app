@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user.password = params[:user][:password]
     if @user.save
       login(@user)
-      redirect_to user_url(@user.id)
+      redirect_to bands_url
     else
       redirect_to new_user_url
     end
