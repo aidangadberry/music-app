@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(email: params[:user][:email])
-    @user.password = params[:user][:password]
+    @user = User.new(user_params)
+    
     if @user.save
       login(@user)
       redirect_to bands_url
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   private
 
-  # def user_params
-  #   User.require(:user).permit(:email, )
-  # end
+  def user_params
+    User.require(:user).permit(:email, :password)
+  end
 end

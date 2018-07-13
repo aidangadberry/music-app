@@ -14,9 +14,9 @@
   <% if action == :edit %>
     <input type="hidden" name="_method" value="patch">
   <% end %>
-  <label for="email">
+  <label for="name">
     Band Name:
-    <input type="text" name="band[name]" value="<%= band.name %>">
+    <input id="name" type="text" name="band[name]" value="<%= band.name %>">
   </label>
   <input type="submit" value="<%= button_txt %>">
 </form>
